@@ -1,6 +1,6 @@
 FROM java:8
 
-ENV GRAILS_VERSION 3.2.8
+ENV GRAILS_VERSION 3.2.11
 
 RUN apt-get update -qq && apt-get install -y -qq curl unzip zip
 RUN curl -s "https://get.sdkman.io" | bash
