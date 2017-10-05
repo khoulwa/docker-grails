@@ -7,7 +7,7 @@ if [ -z $GRAILS_VERSION ]; then
    exit 1;
 fi
 docker build --build-arg GRAILS_VERSION=$GRAILS_VERSION -t mirasrael/grails:$GRAILS_VERSION .
-docker build -f - -t mirasrael/grails:${GRAILS_VERSION}-npm . <<< $( echo FROM mirasrael/grails:$GRAILS_VERSION; echo RUN apt-get install -y npm )
-docker push mirasrael/grails:$GRAILS_VERSION
+docker build --build-arg GRAILS_VERSION=$GRAILS_VERSION -f Dockerfile-npm -t mirasrael/grails:${GRAILS_VERSION}-npm .
+docker push mirasrael/grails:${GRAILS_VERSION}
 docker push mirasrael/grails:${GRAILS_VERSION}-npm
 
